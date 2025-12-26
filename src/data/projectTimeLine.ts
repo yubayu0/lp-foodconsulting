@@ -1,3 +1,5 @@
+import heroImage from "../assets/hero-image.jpeg"
+
 
 export interface ProjectTimeline {
   step: string;
@@ -13,7 +15,7 @@ const projectTimeline : ProjectTimeline[] = [
     step: "01",
     title: "Lorem ipsum dolor sit amet",
     type: "image",
-    media: "/src/assets/hero-image.jpeg",
+    media: heroImage,
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -29,7 +31,7 @@ const projectTimeline : ProjectTimeline[] = [
     step: "03",
     title: "Lorem ipsum dolor sit amet",
     type: "image",
-    media: "/src/assets/hero-image.jpeg",
+    media: heroImage,
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus. ",
   },
@@ -37,7 +39,7 @@ const projectTimeline : ProjectTimeline[] = [
     step: "04",
     title: "Lorem ipsum dolor sit amet",
     type: "image",
-    media: "/src/assets/hero-image.jpeg",
+    media: heroImage,
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
   },
@@ -45,7 +47,7 @@ const projectTimeline : ProjectTimeline[] = [
     step: "05",
     title: "Lorem ipsum dolor sit amet",
     type: "image",
-    media: "/src/assets/hero-image.jpeg",
+    media: heroImage,
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
   },
@@ -53,7 +55,7 @@ const projectTimeline : ProjectTimeline[] = [
     step: "06",
     title: "Lorem ipsum dolor sit amet",
     type: "image",
-    media: "/src/assets/hero-image.jpeg",
+    media: heroImage,
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
   },

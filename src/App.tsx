@@ -2,6 +2,9 @@ import { Menu, X, MapPin, Mail, Phone, CheckCircle, Briefcase } from 'lucide-rea
 import services from './data/services.ts';
 import projectTimeline from './data/projectTimeLine.ts';
 import { useState } from 'react';
+import heroImage from "./assets/hero-image.jpeg"
+import aboutImage from "./assets/about-image.jpeg"
+import contactImage from "./assets/contact-image.jpeg"
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -177,7 +180,7 @@ function App() {
             {/* IMAGE */}
             <div className="max-w-xl mx-auto lg:ml-auto">
               <img
-                src="/src/assets/hero-image.jpeg"
+                src={heroImage}
                 alt="F&B Consulting"
                 loading="lazy"
                 className="rounded-2xl border border-gray-700 shadow-xl"
@@ -198,7 +201,7 @@ function App() {
             {/* IMAGE */}
             <div className="max-w-xl mx-auto lg:mx-0">
               <img
-                src="/src/assets/about-image.jpeg"
+                src={aboutImage}
                 alt="F&B Consulting Discussion"
                 loading="lazy"
                 className="rounded-2xl border border-gray-700 shadow-xl"
@@ -486,7 +489,7 @@ function App() {
               <div className="w-full max-w-xl bg-gray-900 border border-gray-700 rounded-2xl p-8 flex flex-col">
 
                 <img
-                  src="/src/assets/contact-image.jpeg"
+                  src={contactImage}
                   alt="Consultation Discussion"
                   loading="lazy"
                   className="rounded-xl mb-8 border border-gray-700 shadow-md object-cover h-[220px]"
