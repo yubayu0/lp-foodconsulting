@@ -1,94 +1,11 @@
-import { Menu, X, MapPin, Mail, Phone, CheckCircle, Briefcase, TrendingUp, Target, BarChart3, Clock } from 'lucide-react';
+import { Menu, X, MapPin, Mail, Phone, CheckCircle, Briefcase } from 'lucide-react';
+import services from './data/services.ts';
+import projectTimeline from './data/projectTimeLine.ts';
 import { useState } from 'react';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState<number | null>(null);
   const [openTimeline, setOpenTimeline] = useState<number | null>(null);
-
-
-
-  const services = [
-    {
-      icon: Target,
-      title: 'Strategy Concept Development F&B',
-      description: 'Membantu merancang konsep restoran/kafe dari nol, termasuk positioning dan target market'
-    },
-    {
-      icon: BarChart3,
-      title: 'Menu Engineering & Food Cost Analysis',
-      description: 'Optimasi pemilihan menu berdasarkan food cost, margin, dan konsep'
-    },
-    {
-      icon: Briefcase,
-      title: 'Operational SOP & Kitchen Flow',
-      description: 'Penyusunan SOP dapur dan operasional sistem untuk efisiensi dan konsistensi produk'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Strategy Branding & Marketing F&B',
-      description: 'Strategi branding, promosi, dan digital marketing industri F&B dalam meningkatkan penjualan'
-    },
-    {
-      icon: Clock,
-      title: 'Monitoring & Business Improvement',
-      description: 'Analisis performa outlet dan evaluasi hasil serta penyesuaian strategi bila diperlukan'
-    }
-  ];
-
-  const projectTimeline = [
-    {
-      step: "01",
-      title: "Lorem ipsum dolor sit amet",
-      type: "image",
-      media: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      step: "02",
-      title: "Lorem ipsum dolor sit amet ",
-      type: "video",
-      media: "https://www.w3schools.com/html/mov_bbb.mp4",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat condimentum velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
-    },
-    {
-      step: "03",
-      title: "Lorem ipsum dolor sit amet",
-      type: "image",
-      media: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus. ",
-    },
-    {
-      step: "04",
-      title: "Lorem ipsum dolor sit amet",
-      type: "image",
-      media: "https://images.unsplash.com/photo-1528605248644-14dd04022da1",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
-    },
-    {
-      step: "05",
-      title: "Lorem ipsum dolor sit amet",
-      type: "image",
-      media: "https://images.unsplash.com/photo-1528605248644-14dd04022da1",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
-    },
-    {
-      step: "06",
-      title: "Lorem ipsum dolor sit amet",
-      type: "image",
-      media: "https://images.unsplash.com/photo-1528605248644-14dd04022da1",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.",
-    },
-  ];
-
-
-
 
   const packages = [
     {
@@ -129,9 +46,7 @@ function App() {
 
     const message = `
     Halo, saya tertarik untuk konsultasi bisnis F&B.
-
-    Nama:
-    Email:
+    Pilih Paket:
     Kebutuhan bisnis:
     `;
 
@@ -222,12 +137,12 @@ function App() {
 
               <p
                 className="
-            text-sm
-            sm:text-base
-            md:text-lg
-            text-gray-400
-            leading-relaxed
-          "
+                  text-sm
+                  sm:text-base
+                  md:text-lg
+                text-gray-400
+                  leading-relaxed
+                "
               >
                 Konsultan profesional yang membantu bisnis kuliner Anda tumbuh
                 dengan strategi tepat, operasional efisien, dan finansial berkelanjutan.
@@ -235,13 +150,13 @@ function App() {
 
               <div
                 className="
-            flex
-            flex-col
-            sm:flex-row
-            gap-4
-            justify-center
-            lg:justify-start
-          "
+                flex
+                flex-col
+                sm:flex-row
+                gap-4
+                justify-center
+                lg:justify-start
+              "
               >
                 <a
                   href="#contact"
@@ -262,7 +177,7 @@ function App() {
             {/* IMAGE */}
             <div className="max-w-xl mx-auto lg:ml-auto">
               <img
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5"
+                src="/src/assets/hero-image.jpeg"
                 alt="F&B Consulting"
                 loading="lazy"
                 className="rounded-2xl border border-gray-700 shadow-xl"
@@ -283,7 +198,7 @@ function App() {
             {/* IMAGE */}
             <div className="max-w-xl mx-auto lg:mx-0">
               <img
-                src="https://images.unsplash.com/photo-1528605248644-14dd04022da1"
+                src="/src/assets/about-image.jpeg"
                 alt="F&B Consulting Discussion"
                 loading="lazy"
                 className="rounded-2xl border border-gray-700 shadow-xl"
@@ -293,13 +208,13 @@ function App() {
             {/* TEXT */}
             <div
               className="
-          max-w-xl
-          mx-auto
-          lg:mx-0
-          text-center
-          lg:text-left
-          space-y-6
-        "
+              max-w-xl
+              mx-auto
+              lg:mx-0
+              text-center
+              lg:text-left
+              space-y-6
+            "
             >
               {/* Small heading */}
               <span className="block text-amber-500 font-semibold tracking-wide text-sm uppercase">
@@ -358,27 +273,13 @@ function App() {
                 return (
                   <div
                     key={index}
-                    className={`
-                relative
-                flex
-                flex-col
-                md:flex-row
-                ${isLeft ? "md:justify-start" : "md:justify-end"}
-              `}
+                    className={`relative flex flex-col md:flex-row 
+                    ${isLeft ? "md:justify-start" : "md:justify-end"}
+                    `}
                   >
                     {/* STEP DOT */}
                     <div
-                      className="
-                  absolute
-                  left-2
-                  md:left-1/2
-                  top-6
-                  w-5 h-5
-                  rounded-full
-                  bg-amber-500
-                  border-4 border-gray-900
-                  -translate-x-1/2
-                "
+                      className="absolute left-2 md:left-1/2 top-6 w-5 h-5 rounded-full bg-amber-500 border-4 border-gray-900 -translate-x-1/2"
                     />
 
                     {/* CARD */}
@@ -397,7 +298,7 @@ function App() {
                           <video
                             src={item.media}
                             controls
-                            preload="none"
+                            // preload="none"
                             className="w-full h-[200px] sm:h-[220px] object-cover bg-black"
                           />
                         )}
@@ -433,15 +334,18 @@ function App() {
                           {/* DROPDOWN */}
                           <div
                             className={`
-                              mt-4 text-sm text-gray-400 leading-relaxed
-                              transition-opacity transition-transform duration-200
-                              ${isOpen
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 -translate-y-2 pointer-events-none"}
-  `}
+                            overflow-hidden
+                            transition-all duration-300 ease-in-out
+                            ${isOpen
+                                ? 'max-h-40 opacity-100 mt-4'
+                                : 'max-h-0 opacity-0 mt-0 pointer-events-none'}
+                            `}
                           >
-                            {item.desc}
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                              {item.desc}
+                            </p>
                           </div>
+
 
 
                         </div>
@@ -495,17 +399,11 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => {
-              const isSelected = selectedPackage === index;
 
               return (
                 <div
                   key={index}
-                  onClick={() => setSelectedPackage(index)}
-                  className={`cursor-pointer bg-gray-900 p-8 rounded-lg border-2 justify-between flex flex-col transition-all duration-300 relative
-          ${isSelected
-                      ? "border-amber-500 ring-2 ring-amber-500 scale-[1.02]"
-                      : "border-gray-700 hover:border-amber-500"
-                    }`}
+                  className=" bg-gray-900 p-8 rounded-lg border-2 justify-between flex flex-col transition-all duration-300 relative border-amber-500"
                 >
                   {/* Badge populer */}
                   {pkg.popular && (
@@ -537,17 +435,6 @@ function App() {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Button */}
-                  <button
-                    className={`w-full py-3 rounded-lg font-semibold transition-colors
-            ${isSelected
-                        ? "bg-amber-500 text-gray-900"
-                        : "bg-gray-800 text-white border border-gray-700 hover:bg-gray-700"
-                      }`}
-                  >
-                    {isSelected ? "Paket Dipilih" : "Pilih Paket"}
-                  </button>
                 </div>
               );
             })}
@@ -599,7 +486,7 @@ function App() {
               <div className="w-full max-w-xl bg-gray-900 border border-gray-700 rounded-2xl p-8 flex flex-col">
 
                 <img
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                  src="/src/assets/contact-image.jpeg"
                   alt="Consultation Discussion"
                   loading="lazy"
                   className="rounded-xl mb-8 border border-gray-700 shadow-md object-cover h-[220px]"
@@ -617,13 +504,7 @@ function App() {
                 {/* WHATSAPP BUTTON */}
                 <button
                   onClick={handleWhatsAppClick}
-                  className="
-        w-full
-        flex items-center justify-center gap-3
-        px-6 py-4
-        bg-green-600 text-white font-semibold rounded-xl
-        hover:bg-green-500 transition-colors
-      "
+                  className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-500 transition-colors"
                 >
                   <Phone className="h-5 w-5" />
                   Chat Konsultasi via WhatsApp
@@ -671,8 +552,7 @@ function App() {
                     name="name"
                     placeholder="Nama Lengkap"
                     required
-                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white
-        focus:outline-none focus:border-amber-500"
+                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-amber-500"
                   />
 
                   <input
@@ -680,8 +560,7 @@ function App() {
                     name="email"
                     placeholder="Email Aktif"
                     required
-                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white
-        focus:outline-none focus:border-amber-500"
+                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-amber-500"
                   />
 
                   <textarea
@@ -689,16 +568,13 @@ function App() {
                     placeholder="Ceritakan kebutuhan bisnis Anda..."
                     rows={4}
                     required
-                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white
-        focus:outline-none focus:border-amber-500 resize-none"
+                    className="w-full px-4 py-3 text-sm rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-amber-500 resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="mt-6 flex items-center justify-center gap-2 px-6 py-4
-      bg-amber-600 text-white font-semibold rounded-lg
-      border border-gray-700 hover:bg-amber-500 transition-colors"
+                  className="mt-6 flex items-center justify-center gap-2 px-6 py-4 bg-amber-600 text-white font-semibold rounded-lg border border-gray-700 hover:bg-amber-500 transition-colors"
                 >
                   Kirim via Email
                 </button>
@@ -709,8 +585,6 @@ function App() {
           </div>
         </div>
       </section>
-
-
 
       <footer className="bg-gray-900 border-t border-gray-800 py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
