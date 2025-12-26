@@ -66,7 +66,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Briefcase className="h-8 w-8 text-amber-500" />
-              <span className="ml-2 text-xl font-bold text-white">F&B Consulting</span>
+              <span className="ml-2 text-xl font-bold text-white">bayu</span>
             </div>
 
             <div className="hidden md:flex space-x-8">
